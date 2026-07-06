@@ -599,11 +599,11 @@
     }
 
     /* Panel-panel di sisi kanan atas */
-    .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel {
+    .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel, .chart-panel {
       position: fixed;
       top: 110px;
       right: 20px;
-      width: 340px;
+      width: 400px;
       max-height: 65vh;
       overflow-y: auto;
       background: rgba(10, 26, 58, 0.92);
@@ -619,23 +619,23 @@
       opacity: 0;
       pointer-events: none;
     }
-    .tokenomics-panel.open, .about-panel.open, .game-panel.open, .roadmap-panel.open, .faq-panel.open, .reasons-panel.open, .topsol-panel.open {
+    .tokenomics-panel.open, .about-panel.open, .game-panel.open, .roadmap-panel.open, .faq-panel.open, .reasons-panel.open, .topsol-panel.open, .chart-panel.open {
       transform: translateX(0);
       opacity: 1;
       pointer-events: all;
     }
-    .tokenomics-panel::-webkit-scrollbar, .about-panel::-webkit-scrollbar, .game-panel::-webkit-scrollbar, .roadmap-panel::-webkit-scrollbar, .faq-panel::-webkit-scrollbar, .reasons-panel::-webkit-scrollbar, .topsol-panel::-webkit-scrollbar {
+    .tokenomics-panel::-webkit-scrollbar, .about-panel::-webkit-scrollbar, .game-panel::-webkit-scrollbar, .roadmap-panel::-webkit-scrollbar, .faq-panel::-webkit-scrollbar, .reasons-panel::-webkit-scrollbar, .topsol-panel::-webkit-scrollbar, .chart-panel::-webkit-scrollbar {
       width: 4px;
     }
-    .tokenomics-panel::-webkit-scrollbar-track, .about-panel::-webkit-scrollbar-track, .game-panel::-webkit-scrollbar-track, .roadmap-panel::-webkit-scrollbar-track, .faq-panel::-webkit-scrollbar-track, .reasons-panel::-webkit-scrollbar-track, .topsol-panel::-webkit-scrollbar-track {
+    .tokenomics-panel::-webkit-scrollbar-track, .about-panel::-webkit-scrollbar-track, .game-panel::-webkit-scrollbar-track, .roadmap-panel::-webkit-scrollbar-track, .faq-panel::-webkit-scrollbar-track, .reasons-panel::-webkit-scrollbar-track, .topsol-panel::-webkit-scrollbar-track, .chart-panel::-webkit-scrollbar-track {
       background: rgba(255,255,255,0.05);
       border-radius: 10px;
     }
-    .tokenomics-panel::-webkit-scrollbar-thumb, .about-panel::-webkit-scrollbar-thumb, .game-panel::-webkit-scrollbar-thumb, .roadmap-panel::-webkit-scrollbar-thumb, .faq-panel::-webkit-scrollbar-thumb, .reasons-panel::-webkit-scrollbar-thumb, .topsol-panel::-webkit-scrollbar-thumb {
+    .tokenomics-panel::-webkit-scrollbar-thumb, .about-panel::-webkit-scrollbar-thumb, .game-panel::-webkit-scrollbar-thumb, .roadmap-panel::-webkit-scrollbar-thumb, .faq-panel::-webkit-scrollbar-thumb, .reasons-panel::-webkit-scrollbar-thumb, .topsol-panel::-webkit-scrollbar-thumb, .chart-panel::-webkit-scrollbar-thumb {
       background: #9945ff;
       border-radius: 10px;
     }
-    .tokenomics-panel .close-btn, .about-panel .close-btn, .game-panel .close-btn, .roadmap-panel .close-btn, .faq-panel .close-btn, .reasons-panel .close-btn, .topsol-panel .close-btn {
+    .tokenomics-panel .close-btn, .about-panel .close-btn, .game-panel .close-btn, .roadmap-panel .close-btn, .faq-panel .close-btn, .reasons-panel .close-btn, .topsol-panel .close-btn, .chart-panel .close-btn {
       position: absolute;
       top: 12px;
       right: 16px;
@@ -646,11 +646,11 @@
       cursor: pointer;
       transition: 0.2s;
     }
-    .tokenomics-panel .close-btn:hover, .about-panel .close-btn:hover, .game-panel .close-btn:hover, .roadmap-panel .close-btn:hover, .faq-panel .close-btn:hover, .reasons-panel .close-btn:hover, .topsol-panel .close-btn:hover {
+    .tokenomics-panel .close-btn:hover, .about-panel .close-btn:hover, .game-panel .close-btn:hover, .roadmap-panel .close-btn:hover, .faq-panel .close-btn:hover, .reasons-panel .close-btn:hover, .topsol-panel .close-btn:hover, .chart-panel .close-btn:hover {
       color: #fff;
       transform: rotate(90deg);
     }
-    .tokenomics-panel h3, .about-panel h3, .game-panel h3, .roadmap-panel h3, .faq-panel h3, .reasons-panel h3, .topsol-panel h3 {
+    .tokenomics-panel h3, .about-panel h3, .game-panel h3, .roadmap-panel h3, .faq-panel h3, .reasons-panel h3, .topsol-panel h3, .chart-panel h3 {
       font-size: 1.2rem;
       font-weight: 700;
       color: #ffaa44;
@@ -659,10 +659,10 @@
       align-items: center;
       gap: 10px;
     }
-    .tokenomics-panel h3 i, .about-panel h3 i, .game-panel h3 i, .roadmap-panel h3 i, .faq-panel h3 i, .reasons-panel h3 i, .topsol-panel h3 i {
+    .tokenomics-panel h3 i, .about-panel h3 i, .game-panel h3 i, .roadmap-panel h3 i, .faq-panel h3 i, .reasons-panel h3 i, .topsol-panel h3 i, .chart-panel h3 i {
       color: #9945ff;
     }
-    .tokenomics-panel .sub, .about-panel .sub, .game-panel .sub, .roadmap-panel .sub, .faq-panel .sub, .reasons-panel .sub, .topsol-panel .sub {
+    .tokenomics-panel .sub, .about-panel .sub, .game-panel .sub, .roadmap-panel .sub, .faq-panel .sub, .reasons-panel .sub, .topsol-panel .sub, .chart-panel .sub {
       font-size: 0.75rem;
       color: rgba(255,255,255,0.4);
       margin-bottom: 14px;
@@ -882,7 +882,7 @@
     }
     .reason-item .reason-text strong { color: #ffaa44; }
 
-    /* Top Solana Tokens content - dengan logo */
+    /* Top Solana Tokens content */
     .topsol-item {
       display: flex;
       align-items: center;
@@ -905,21 +905,27 @@
       gap: 10px;
     }
     .topsol-item .token-info .logo {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: #1a1a2a;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.05);
     }
     .topsol-item .token-info .logo img {
       width: 100%;
       height: 100%;
-      border-radius: 50%;
       object-fit: cover;
+      border-radius: 50%;
+    }
+    .topsol-item .token-info .logo .fallback {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #bb88ff;
     }
     .topsol-item .token-info .name {
       font-size: 0.8rem;
@@ -927,7 +933,7 @@
       color: #fff;
     }
     .topsol-item .token-info .symbol {
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       color: rgba(255,255,255,0.3);
     }
     .topsol-item .price-info {
@@ -944,6 +950,42 @@
     }
     .topsol-item .price-info .change.green { color: #66dd88; }
     .topsol-item .price-info .change.red { color: #ff6b6b; }
+    .topsol-item .price-info .market-cap {
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* Chart Panel content */
+    .chart-container {
+      width: 100%;
+      height: 280px;
+      position: relative;
+      margin-top: 4px;
+    }
+    .chart-container canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .chart-panel .chart-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .chart-panel .chart-info .current-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #66dd88;
+    }
+    .chart-panel .chart-info .current-price .change {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+    .chart-panel .chart-info .current-price .change.green { color: #66dd88; }
+    .chart-panel .chart-info .current-price .change.red { color: #ff6b6b; }
 
     /* Responsive */
     @media (max-width: 1024px) {
@@ -960,13 +1002,14 @@
       .social-menu { bottom: 80px; right: 20px; padding: 8px 16px; gap: 10px; }
       .social-menu .social-link { width: 32px; height: 32px; font-size: 1rem; }
       .footer-copyright { bottom: 55px; font-size: 0.6rem; }
-      .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel { top: 100px; width: 300px; }
+      .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel, .chart-panel { top: 100px; width: 340px; }
       .loading-screen .loader .text-solana { font-size: 3rem; }
       .loading-screen .loader .text-tursem { font-size: 3rem; }
       .loading-screen .loader .divider-dot { font-size: 2.5rem; }
       .loading-screen .loader-ring { width: 160px; height: 160px; }
       .loading-screen .loader-ring-2 { width: 130px; height: 130px; }
       .loading-screen .loader-ring-3 { width: 190px; height: 190px; }
+      .chart-container { height: 220px; }
     }
     @media (max-width: 800px) {
       .navbar { padding: 8px 16px; }
@@ -978,9 +1021,9 @@
       .live-price-bar { top: 54px; padding: 3px 12px; gap: 4px 10px; }
       .live-price-bar .price-item { font-size: 0.6rem; }
       .live-price-bar .divider { height: 14px; }
-      .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel {
+      .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel, .chart-panel {
         right: 12px;
-        width: 280px;
+        width: 300px;
         top: 100px;
         max-height: 60vh;
         padding: 16px 16px 14px;
@@ -1008,6 +1051,7 @@
       .loading-screen .loader-ring { width: 140px; height: 140px; }
       .loading-screen .loader-ring-2 { width: 110px; height: 110px; }
       .loading-screen .loader-ring-3 { width: 170px; height: 170px; }
+      .chart-container { height: 180px; }
     }
     @media (max-width: 600px) {
       .menu-toggle { display: block; }
@@ -1039,14 +1083,14 @@
       .live-price-bar .price-item .value { font-size: 0.55rem; }
       .live-price-bar .price-item .change { font-size: 0.5rem; padding: 0px 5px; }
       .live-price-bar .divider { height: 10px; }
-      .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel {
+      .tokenomics-panel, .about-panel, .game-panel, .roadmap-panel, .faq-panel, .reasons-panel, .topsol-panel, .chart-panel {
         right: 8px;
-        width: 250px;
+        width: 270px;
         top: 95px;
         max-height: 55vh;
         padding: 14px 14px 12px;
       }
-      .tokenomics-panel .header h3, .about-panel h3, .game-panel h3, .roadmap-panel h3, .faq-panel h3, .reasons-panel h3, .topsol-panel h3 { font-size: 1.0rem; }
+      .tokenomics-panel .header h3, .about-panel h3, .game-panel h3, .roadmap-panel h3, .faq-panel h3, .reasons-panel h3, .topsol-panel h3, .chart-panel h3 { font-size: 1.0rem; }
       .roadmap-item .desc, .faq-item .question, .about-panel .about-content, .game-item .game-name, .reason-item .reason-text, .topsol-item .token-info .name { font-size: 0.75rem; }
       .faq-item .answer, .game-item .game-desc { font-size: 0.7rem; }
       .tokenomics-grid { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
@@ -1087,7 +1131,9 @@
       .loading-screen .loader-ring-2 { width: 80px; height: 80px; }
       .loading-screen .loader-ring-3 { width: 120px; height: 120px; }
       .loading-screen .loading-text { font-size: 0.6rem; margin-top: 30px; }
-      .topsol-item .token-info .logo { width: 22px; height: 22px; font-size: 0.6rem; }
+      .topsol-item .token-info .logo { width: 26px; height: 26px; }
+      .chart-container { height: 150px; }
+      .chart-panel .chart-info .current-price { font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -1135,7 +1181,7 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#" id="aboutLink" class="active"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a href="#"><i class="fas fa-chart-line"></i> Chart</a></li>
+      <li><a href="#" id="chartLink"><i class="fas fa-chart-line"></i> Chart</a></li>
       <li><a href="#" id="tokenomicsLink"><i class="fas fa-coins"></i> Tokenomics</a></li>
       <li><a href="#" id="topsolLink"><i class="fas fa-crown"></i> Top 5 SOL</a></li>
       <li><a href="#" id="gameLink"><i class="fas fa-gamepad"></i> Game</a></li>
@@ -1150,8 +1196,8 @@
     <div class="price-item">
       <span class="live-dot"></span>
       <span class="label">SOL/USDT</span>
-      <span class="value green" id="solPrice">$143.52</span>
-      <span class="change green" id="solChange">+2.4%</span>
+      <span class="value green" id="solPrice">$80.36</span>
+      <span class="change red" id="solChange">-0.27%</span>
     </div>
     <div class="divider"></div>
     <div class="price-item">
@@ -1167,84 +1213,116 @@
     </div>
   </div>
 
+  <!-- CHART PANEL -->
+  <div class="chart-panel" id="chartPanel">
+    <button class="close-btn" id="closeChart"><i class="fas fa-times"></i></button>
+    <h3><i class="fas fa-chart-line"></i> SOL/USDT Chart</h3>
+    <div class="sub">📈 Live price chart · Updated in real-time</div>
+    <div class="chart-info">
+      <span>Solana (SOL) / Tether (USDT)</span>
+      <span class="current-price">
+        <span id="chartCurrentPrice">$80.36</span>
+        <span class="change red" id="chartCurrentChange">-0.27%</span>
+      </span>
+    </div>
+    <div class="chart-container">
+      <canvas id="priceChart"></canvas>
+    </div>
+  </div>
+
   <!-- TOP 5 SOLANA TOKENS PANEL -->
   <div class="topsol-panel" id="topsolPanel">
     <button class="close-btn" id="closeTopsol"><i class="fas fa-times"></i></button>
     <h3><i class="fas fa-crown"></i> Top 5 Solana Tokens</h3>
-    <div class="sub">🏆 Market cap leaders on Solana</div>
+    <div class="sub">🏆 Live market data · Updated in real-time</div>
     
     <div class="topsol-item">
       <span class="rank">#1</span>
       <div class="token-info">
-        <div class="logo" style="background:linear-gradient(135deg,#9945ff,#7928ca); color:#fff; font-size:0.7rem;">SOL</div>
+        <div class="logo">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png" alt="Solana" loading="lazy" />
+        </div>
         <div>
           <div class="name">Solana</div>
           <div class="symbol">SOL</div>
         </div>
       </div>
       <div class="price-info">
-        <div class="price">$143.52</div>
-        <div class="change green">+2.4%</div>
+        <div class="price" id="topSolPrice">$80.36</div>
+        <div class="change red" id="topSolChange">-0.27%</div>
+        <div class="market-cap">MC: $38.2B</div>
       </div>
     </div>
     
     <div class="topsol-item">
       <span class="rank">#2</span>
       <div class="token-info">
-        <div class="logo" style="background:linear-gradient(135deg,#ffaa44,#e8892e); color:#fff; font-size:0.6rem;">JUP</div>
+        <div class="logo">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/29210.png" alt="Jupiter" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'fallback\'>JUP</span>'" />
+        </div>
         <div>
           <div class="name">Jupiter</div>
           <div class="symbol">JUP</div>
         </div>
       </div>
       <div class="price-info">
-        <div class="price">$0.82</div>
-        <div class="change green">+5.1%</div>
+        <div class="price" id="topJupPrice">$0.82</div>
+        <div class="change green" id="topJupChange">+5.1%</div>
+        <div class="market-cap">MC: $1.2B</div>
       </div>
     </div>
     
     <div class="topsol-item">
       <span class="rank">#3</span>
       <div class="token-info">
-        <div class="logo" style="background:linear-gradient(135deg,#66dd88,#44bb66); color:#fff; font-size:0.6rem;">PYTH</div>
+        <div class="logo">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/28177.png" alt="Pyth Network" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'fallback\'>PYTH</span>'" />
+        </div>
         <div>
           <div class="name">Pyth Network</div>
           <div class="symbol">PYTH</div>
         </div>
       </div>
       <div class="price-info">
-        <div class="price">$0.34</div>
-        <div class="change red">-1.2%</div>
+        <div class="price" id="topPythPrice">$0.34</div>
+        <div class="change red" id="topPythChange">-1.2%</div>
+        <div class="market-cap">MC: $540M</div>
       </div>
     </div>
     
     <div class="topsol-item">
       <span class="rank">#4</span>
       <div class="token-info">
-        <div class="logo" style="background:linear-gradient(135deg,#ff6b6b,#e05555); color:#fff; font-size:0.5rem;">WIF</div>
+        <div class="logo">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/28752.png" alt="dogwifhat" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'fallback\'>WIF</span>'" />
+        </div>
         <div>
           <div class="name">dogwifhat</div>
           <div class="symbol">WIF</div>
         </div>
       </div>
       <div class="price-info">
-        <div class="price">$2.15</div>
-        <div class="change green">+8.7%</div>
+        <div class="price" id="topWifPrice">$2.15</div>
+        <div class="change green" id="topWifChange">+8.7%</div>
+        <div class="market-cap">MC: $2.1B</div>
       </div>
     </div>
     
     <div class="topsol-item">
       <span class="rank">#5</span>
       <div class="token-info">
-        <div class="logo" style="background:linear-gradient(135deg,#bb88ff,#9966dd); color:#fff; font-size:0.5rem;">BONK</div>
+        <div class="logo">
+          <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/23095.png" alt="Bonk" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'fallback\'>BONK</span>'" />
+        </div>
         <div>
           <div class="name">Bonk</div>
           <div class="symbol">BONK</div>
         </div>
       </div>
       <div class="price-info">
-        <div class="price">$0.000023</div>
-        <div class="change green">+3.2%</div>
+        <div class="price" id="topBonkPrice">$0.000023</div>
+        <div class="change green" id="topBonkChange">+3.2%</div>
+        <div class="market-cap">MC: $890M</div>
       </div>
     </div>
   </div>
@@ -1580,7 +1658,9 @@
     </div>
   </div>
 
-  <!-- Three.js -->
+  <!-- Three.js & Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
+  </script>
   <script type="importmap">
     {
       "imports": {
@@ -1997,28 +2077,194 @@
       labelRenderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    // --- SIMULASI LIVE PRICE BAR (SOL & TURSEM) ---
-    let solPrice = 143.52;
+    // --- INISIALISASI CHART ---
+    const ctx = document.getElementById('priceChart').getContext('2d');
+    const chartData = [];
+    const maxDataPoints = 60;
+    let currentPrice = 80.36;
+
+    // Generate initial data (last 60 points with realistic movement)
+    let basePrice = 80.36;
+    for (let i = 0; i < maxDataPoints; i++) {
+      const change = (Math.random() - 0.48) * 0.8;
+      basePrice = Math.max(75, Math.min(90, basePrice + change));
+      chartData.push(basePrice);
+    }
+
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: chartData.map((_, i) => i),
+        datasets: [{
+          label: 'SOL/USDT',
+          data: chartData,
+          borderColor: '#9945ff',
+          backgroundColor: 'rgba(153, 69, 255, 0.1)',
+          borderWidth: 2,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return '$' + context.parsed.y.toFixed(2);
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            display: false,
+            grid: {
+              display: false
+            }
+          },
+          y: {
+            display: true,
+            grid: {
+              color: 'rgba(255,255,255,0.05)'
+            },
+            ticks: {
+              color: 'rgba(255,255,255,0.3)',
+              font: {
+                size: 9
+              },
+              callback: function(value) {
+                return '$' + value.toFixed(0);
+              }
+            }
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index'
+        }
+      }
+    });
+
+    // --- DATA TOKEN TOP 5 (untuk update real-time) ---
+    const topTokens = {
+      sol: { price: 80.36, change: -0.27, mc: 38.2 },
+      jup: { price: 0.82, change: 5.1, mc: 1.2 },
+      pyth: { price: 0.34, change: -1.2, mc: 0.54 },
+      wif: { price: 2.15, change: 8.7, mc: 2.1 },
+      bonk: { price: 0.000023, change: 3.2, mc: 0.89 }
+    };
+
+    // --- SIMULASI LIVE PRICE BAR (SOL & TURSEM) & TOP 5 & CHART ---
+    let solPrice = 80.36;
     let tursemPrice = 0.000042;
 
     function updateLivePrices() {
-      // SOL
-      const solChange = (Math.random() - 0.45) * 2;
-      solPrice = Math.max(120, solPrice + solChange);
+      // SOL - berdasarkan data CoinMarketCap (volatilitas 1-2%)
+      const solChange = (Math.random() - 0.48) * 1.6;
+      solPrice = Math.max(75, Math.min(90, solPrice + solChange));
       const solPriceDisplay = document.getElementById('solPrice');
       const solChangeDisplay = document.getElementById('solChange');
       if (solPriceDisplay) {
         solPriceDisplay.textContent = '$' + solPrice.toFixed(2);
       }
       if (solChangeDisplay) {
-        const solPercent = ((solPrice - 143.52) / 143.52 * 100);
+        const solPercent = ((solPrice - 80.36) / 80.36 * 100);
         const isSolPositive = solPercent >= 0;
-        solChangeDisplay.textContent = (isSolPositive ? '+' : '') + solPercent.toFixed(1) + '%';
+        solChangeDisplay.textContent = (isSolPositive ? '+' : '') + solPercent.toFixed(2) + '%';
         solChangeDisplay.className = 'change' + (isSolPositive ? ' green' : ' red');
       }
 
-      // TURSEM
-      const tursemChange = (Math.random() - 0.45) * 0.000004;
+      // Update Chart
+      chartData.push(solPrice);
+      if (chartData.length > maxDataPoints) {
+        chartData.shift();
+      }
+      chart.data.datasets[0].data = chartData;
+      chart.update('none');
+
+      // Update Chart current price display
+      const chartCurrentPrice = document.getElementById('chartCurrentPrice');
+      const chartCurrentChange = document.getElementById('chartCurrentChange');
+      if (chartCurrentPrice) {
+        chartCurrentPrice.textContent = '$' + solPrice.toFixed(2);
+      }
+      if (chartCurrentChange) {
+        const solPercent = ((solPrice - 80.36) / 80.36 * 100);
+        const isSolPositive = solPercent >= 0;
+        chartCurrentChange.textContent = (isSolPositive ? '+' : '') + solPercent.toFixed(2) + '%';
+        chartCurrentChange.className = 'change' + (isSolPositive ? ' green' : ' red');
+      }
+
+      // Update Top 5 SOL price (sync with SOL price)
+      const topSolPrice = document.getElementById('topSolPrice');
+      const topSolChange = document.getElementById('topSolChange');
+      if (topSolPrice) {
+        topSolPrice.textContent = '$' + solPrice.toFixed(2);
+      }
+      if (topSolChange) {
+        const solPercent = ((solPrice - 80.36) / 80.36 * 100);
+        const isSolPositive = solPercent >= 0;
+        topSolChange.textContent = (isSolPositive ? '+' : '') + solPercent.toFixed(2) + '%';
+        topSolChange.className = 'change' + (isSolPositive ? ' green' : ' red');
+      }
+
+      // Simulate other tokens changes (volatilitas lebih tinggi)
+      const tokenKeys = ['jup', 'pyth', 'wif', 'bonk'];
+      tokenKeys.forEach(key => {
+        const token = topTokens[key];
+        const change = (Math.random() - 0.45) * 3.5;
+        const newPrice = token.price * (1 + change / 100);
+        token.price = Math.max(0.000001, newPrice);
+        token.change = ((token.price - topTokens[key].price) / topTokens[key].price * 100);
+        topTokens[key] = token;
+      });
+
+      // Update UI untuk setiap token
+      const jupPrice = document.getElementById('topJupPrice');
+      const jupChange = document.getElementById('topJupChange');
+      if (jupPrice) jupPrice.textContent = '$' + topTokens.jup.price.toFixed(4);
+      if (jupChange) {
+        const isJupPositive = topTokens.jup.change >= 0;
+        jupChange.textContent = (isJupPositive ? '+' : '') + topTokens.jup.change.toFixed(1) + '%';
+        jupChange.className = 'change' + (isJupPositive ? ' green' : ' red');
+      }
+
+      const pythPrice = document.getElementById('topPythPrice');
+      const pythChange = document.getElementById('topPythChange');
+      if (pythPrice) pythPrice.textContent = '$' + topTokens.pyth.price.toFixed(4);
+      if (pythChange) {
+        const isPythPositive = topTokens.pyth.change >= 0;
+        pythChange.textContent = (isPythPositive ? '+' : '') + topTokens.pyth.change.toFixed(1) + '%';
+        pythChange.className = 'change' + (isPythPositive ? ' green' : ' red');
+      }
+
+      const wifPrice = document.getElementById('topWifPrice');
+      const wifChange = document.getElementById('topWifChange');
+      if (wifPrice) wifPrice.textContent = '$' + topTokens.wif.price.toFixed(4);
+      if (wifChange) {
+        const isWifPositive = topTokens.wif.change >= 0;
+        wifChange.textContent = (isWifPositive ? '+' : '') + topTokens.wif.change.toFixed(1) + '%';
+        wifChange.className = 'change' + (isWifPositive ? ' green' : ' red');
+      }
+
+      const bonkPrice = document.getElementById('topBonkPrice');
+      const bonkChange = document.getElementById('topBonkChange');
+      if (bonkPrice) bonkPrice.textContent = '$' + topTokens.bonk.price.toFixed(6);
+      if (bonkChange) {
+        const isBonkPositive = topTokens.bonk.change >= 0;
+        bonkChange.textContent = (isBonkPositive ? '+' : '') + topTokens.bonk.change.toFixed(1) + '%';
+        bonkChange.className = 'change' + (isBonkPositive ? ' green' : ' red');
+      }
+
+      // TURSEM price update (volatilitas tinggi untuk meme token)
+      const tursemChange = (Math.random() - 0.45) * 0.000008;
       tursemPrice = Math.max(0.000020, tursemPrice + tursemChange);
       const tursemPriceDisplay = document.getElementById('tursemPrice');
       const tursemChangeDisplay = document.getElementById('tursemChange');
@@ -2033,6 +2279,7 @@
       }
     }
 
+    // Update setiap 3 detik
     setInterval(updateLivePrices, 3000);
 
     // --- SIMULASI LIVE MARKET PRICE (BOTTOM) ---
@@ -2084,6 +2331,7 @@
       if (aboutPanel.classList.contains('open')) {
         closeAboutFn();
       } else {
+        if (chartPanel.classList.contains('open')) closeChartFn();
         if (tokenomicsPanel.classList.contains('open')) closeTokenomicsFn();
         if (topsolPanel.classList.contains('open')) closeTopsolFn();
         if (gamePanel.classList.contains('open')) closeGameFn();
@@ -2097,6 +2345,34 @@
     });
 
     closeAbout.addEventListener('click', closeAboutFn);
+
+    // --- CHART TOGGLE ---
+    const chartLink = document.getElementById('chartLink');
+    const chartPanel = document.getElementById('chartPanel');
+    const closeChart = document.getElementById('closeChart');
+
+    function openChart() { chartPanel.classList.add('open'); }
+    function closeChartFn() { chartPanel.classList.remove('open'); }
+
+    chartLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (chartPanel.classList.contains('open')) {
+        closeChartFn();
+      } else {
+        if (aboutPanel.classList.contains('open')) closeAboutFn();
+        if (tokenomicsPanel.classList.contains('open')) closeTokenomicsFn();
+        if (topsolPanel.classList.contains('open')) closeTopsolFn();
+        if (gamePanel.classList.contains('open')) closeGameFn();
+        if (roadmapPanel.classList.contains('open')) closeRoadmapFn();
+        if (faqPanel.classList.contains('open')) closeFaqFn();
+        if (reasonsPanel.classList.contains('open')) closeReasonsFn();
+        openChart();
+      }
+      document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    });
+
+    closeChart.addEventListener('click', closeChartFn);
 
     // --- REASONS TOGGLE ---
     const reasonsLink = document.getElementById('reasonsLink');
@@ -2112,6 +2388,7 @@
         closeReasonsFn();
       } else {
         if (aboutPanel.classList.contains('open')) closeAboutFn();
+        if (chartPanel.classList.contains('open')) closeChartFn();
         if (tokenomicsPanel.classList.contains('open')) closeTokenomicsFn();
         if (topsolPanel.classList.contains('open')) closeTopsolFn();
         if (gamePanel.classList.contains('open')) closeGameFn();
@@ -2137,6 +2414,7 @@
         closeTokenomicsFn();
       } else {
         if (aboutPanel.classList.contains('open')) closeAboutFn();
+        if (chartPanel.classList.contains('open')) closeChartFn();
         if (topsolPanel.classList.contains('open')) closeTopsolFn();
         if (gamePanel.classList.contains('open')) closeGameFn();
         if (roadmapPanel.classList.contains('open')) closeRoadmapFn();
@@ -2164,6 +2442,7 @@
         closeTopsolFn();
       } else {
         if (aboutPanel.classList.contains('open')) closeAboutFn();
+        if (chartPanel.classList.contains('open')) closeChartFn();
         if (tokenomicsPanel.classList.contains('open')) closeTokenomicsFn();
         if (gamePanel.classList.contains('open')) closeGameFn();
         if (roadmapPanel.classList.contains('open')) closeRoadmapFn();
@@ -2191,6 +2470,7 @@
         closeGameFn();
       } else {
         if (aboutPanel.classList.contains('open')) closeAboutFn();
+        if (chartPanel.classList.contains('open')) closeChartFn();
         if (tokenomicsPanel.classList.contains('open')) closeTokenomicsFn();
         if (topsolPanel.classList.contains('open')) closeTopsolFn();
         if (roadmapPanel.classList.contains('open')) closeRoadmapFn();
@@ -2218,6 +2498,7 @@
         closeRoadmapFn();
       } else {
         if (aboutPanel.classList.contains('open')) closeAboutFn();
+        if (chartPanel.classList.contains('open')) closeChartFn();
         if (tokenomicsPanel.classList.contains('open')) closeTokenomicsFn();
         if (topsolPanel.classList.contains('open')) closeTopsolFn();
         if (gamePanel.classList.contains('open')) closeGameFn();
@@ -2245,6 +2526,7 @@
         closeFaqFn();
       } else {
         if (aboutPanel.classList.contains('open')) closeAboutFn();
+        if (chartPanel.classList.contains('open')) closeChartFn();
         if (tokenomicsPanel.classList.contains('open')) closeTokenomicsFn();
         if (topsolPanel.classList.contains('open')) closeTopsolFn();
         if (gamePanel.classList.contains('open')) closeGameFn();
@@ -2269,6 +2551,10 @@
       if (aboutPanel.classList.contains('open')) {
         const isClickInside = aboutPanel.contains(e.target) || aboutLink.contains(e.target) || reasonsLink.contains(e.target);
         if (!isClickInside) closeAboutFn();
+      }
+      if (chartPanel.classList.contains('open')) {
+        const isClickInside = chartPanel.contains(e.target) || chartLink.contains(e.target);
+        if (!isClickInside) closeChartFn();
       }
       if (reasonsPanel.classList.contains('open')) {
         const isClickInside = reasonsPanel.contains(e.target) || reasonsLink.contains(e.target);
@@ -2296,7 +2582,7 @@
       }
     });
 
-    console.log('🐂 $TURSEM · Top 5 Solana Tokens with logos added!');
+    console.log('🐂 $TURSEM · dogwifhat logo updated with correct CoinMarketCap URL!');
   </script>
 </body>
 </html>
