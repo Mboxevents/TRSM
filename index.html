@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>$TURSEM · Bullish Bulls</title>
-
   
   <!-- FAVICON & LOGO: Banteng beradu dengan tulisan $TURSEM -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%239945ff'/><stop offset='100%25' style='stop-color:%23ffaa44'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='%230a1a3a'/><text x='50' y='28' font-size='16' font-weight='bold' fill='%23ffaa44' text-anchor='middle' font-family='Arial' letter-spacing='1'>$TURSEM</text><path d='M22 50 Q35 30 50 50 Q65 30 78 50 L78 60 Q65 50 50 60 Q35 50 22 60 Z' fill='url(%23g)' opacity='0.9'/><path d='M30 45 Q38 35 50 45 Q62 35 70 45' stroke='%23ffaa44' stroke-width='2.5' fill='none' stroke-linecap='round'/><circle cx='38' cy='55' r='6' fill='%239945ff' opacity='0.7'/><circle cx='62' cy='55' r='6' fill='%239945ff' opacity='0.7'/><text x='50' y='83' font-size='11' font-weight='bold' fill='%23bb88ff' text-anchor='middle' font-family='Arial' letter-spacing='2'>BULLISH</text></svg>" type="image/svg+xml" />
@@ -1838,125 +1837,109 @@
 
     scene.add(globeGroup);
 
-    // --- ORANG DUDUK DI DEPAN LAPTOP (TRADING) ---
-    const personTradingGroup = new THREE.Group();
-    personTradingGroup.position.set(-1.8, 0.4, 1.5);
+    // --- TOKEN $SOLANA (SISI KIRI) ---
+    const solanaTokenGroup = new THREE.Group();
+    solanaTokenGroup.position.set(-2.5, 1.2, -1.5);
 
-    // Meja
-    const tableMat = new THREE.MeshStandardMaterial({ color: 0x3a4a6a, roughness: 0.6, metalness: 0.1 });
-    const tableTop = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.05, 0.6), tableMat);
-    tableTop.position.set(0, -0.05, 0);
-    tableTop.castShadow = true;
-    tableTop.receiveShadow = true;
-    personTradingGroup.add(tableTop);
-
-    // Kaki meja
-    const legMat = new THREE.MeshStandardMaterial({ color: 0x2a3a5a, roughness: 0.7 });
-    const legPositions = [[-0.4, -0.3, -0.25], [0.4, -0.3, -0.25], [-0.4, -0.3, 0.25], [0.4, -0.3, 0.25]];
-    legPositions.forEach(pos => {
-      const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.04, 0.25, 6), legMat);
-      leg.position.set(pos[0], -0.2, pos[2]);
-      leg.castShadow = true;
-      personTradingGroup.add(leg);
+    // Cincin utama - warna biru khas Solana
+    const solRingGeo = new THREE.TorusGeometry(0.9, 0.09, 32, 48);
+    const solRingMat = new THREE.MeshStandardMaterial({ 
+      color: 0x9945ff, 
+      emissive: 0x441177, 
+      roughness: 0.3, 
+      metalness: 0.7, 
+      emissiveIntensity: 0.4 
     });
+    const solRing = new THREE.Mesh(solRingGeo, solRingMat);
+    solRing.castShadow = true;
+    solRing.receiveShadow = true;
+    solRing.rotation.x = Math.PI / 2;
+    solRing.rotation.z = 0.3;
+    solanaTokenGroup.add(solRing);
 
-    // Laptop (layar miring)
-    const screenMat = new THREE.MeshStandardMaterial({ 
-      color: 0x111122, 
-      emissive: 0x2244aa, 
-      emissiveIntensity: 0.3,
-      roughness: 0.2,
-      metalness: 0.1
+    // Cincin kedua
+    const solRing2Geo = new THREE.TorusGeometry(1.1, 0.04, 24, 48);
+    const solRing2Mat = new THREE.MeshStandardMaterial({ 
+      color: 0x44aaff, 
+      emissive: 0x004466, 
+      roughness: 0.2, 
+      metalness: 0.9, 
+      emissiveIntensity: 0.3 
     });
-    const screen = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.35, 0.02), screenMat);
-    screen.position.set(0, 0.25, -0.05);
-    screen.rotation.x = -0.4;
-    screen.castShadow = true;
-    personTradingGroup.add(screen);
+    const solRing2 = new THREE.Mesh(solRing2Geo, solRing2Mat);
+    solRing2.castShadow = true;
+    solRing2.receiveShadow = true;
+    solRing2.rotation.x = Math.PI / 2;
+    solRing2.rotation.z = -0.2;
+    solanaTokenGroup.add(solRing2);
 
-    // Bingkai layar
-    const frameMat = new THREE.MeshStandardMaterial({ color: 0x222233, roughness: 0.3, metalness: 0.5 });
-    const frame = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.37, 0.015), frameMat);
-    frame.position.set(0, 0.25, -0.04);
-    frame.rotation.x = -0.4;
-    personTradingGroup.add(frame);
+    // Bagian tengah
+    const solCenterGeo = new THREE.CircleGeometry(0.65, 32);
+    const solCenterMat = new THREE.MeshStandardMaterial({ 
+      color: 0x9945ff, 
+      emissive: 0x331166, 
+      roughness: 0.2, 
+      metalness: 0.3, 
+      transparent: true, 
+      opacity: 0.85, 
+      side: THREE.DoubleSide 
+    });
+    const solCenter = new THREE.Mesh(solCenterGeo, solCenterMat);
+    solCenter.castShadow = true;
+    solCenter.receiveShadow = true;
+    solCenter.rotation.x = -Math.PI / 2;
+    solCenter.position.y = 0.01;
+    solanaTokenGroup.add(solCenter);
 
-    // Grafik trading di layar (beberapa kotak kecil)
-    const chartColors = [0x66dd88, 0xffaa44, 0x9945ff, 0x44aaff, 0xff6b6b];
+    // Logo SOLANA di tengah (menggunakan CSS2DRenderer)
+    const solLabelDiv = document.createElement('div');
+    solLabelDiv.innerHTML = '<img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png" style="width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,0.1);" />';
+    solLabelDiv.style.display = 'flex';
+    solLabelDiv.style.alignItems = 'center';
+    solLabelDiv.style.justifyContent = 'center';
+    solLabelDiv.style.background = 'rgba(10,26,58,0.6)';
+    solLabelDiv.style.borderRadius = '50%';
+    solLabelDiv.style.padding = '4px';
+    solLabelDiv.style.backdropFilter = 'blur(4px)';
+    solLabelDiv.style.boxShadow = '0 0 30px rgba(153,69,255,0.3)';
+    const solLabel = new CSS2DObject(solLabelDiv);
+    solLabel.position.set(0, 0, 0.85);
+    solanaTokenGroup.add(solLabel);
+
+    // Nama token di bawah
+    const solNameDiv = document.createElement('div');
+    solNameDiv.textContent = 'SOLANA';
+    solNameDiv.style.color = 'white';
+    solNameDiv.style.fontSize = '14px';
+    solNameDiv.style.fontWeight = '700';
+    solNameDiv.style.fontFamily = 'Arial, sans-serif';
+    solNameDiv.style.textShadow = '0 0 20px #9945ff, 0 0 40px #441177';
+    solNameDiv.style.background = 'rgba(0,0,0,0.3)';
+    solNameDiv.style.padding = '2px 12px';
+    solNameDiv.style.borderRadius = '20px';
+    solNameDiv.style.backdropFilter = 'blur(4px)';
+    solNameDiv.style.border = '1px solid rgba(255,255,255,0.1)';
+    solNameDiv.style.letterSpacing = '2px';
+    const solName = new CSS2DObject(solNameDiv);
+    solName.position.set(0, -0.55, 0);
+    solanaTokenGroup.add(solName);
+
+    // Titik aksen
     for (let i = 0; i < 12; i++) {
-      const barMat = new THREE.MeshStandardMaterial({ 
-        color: chartColors[i % chartColors.length],
-        emissive: chartColors[i % chartColors.length],
-        emissiveIntensity: 0.2
-      });
-      const bar = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.01 + Math.random() * 0.12, 0.005), barMat);
-      const xPos = -0.2 + (i / 11) * 0.4;
-      bar.position.set(xPos, 0.1 + Math.random() * 0.15, 0.24);
-      bar.rotation.x = -0.4;
-      personTradingGroup.add(bar);
+      const angle = (i / 12) * Math.PI * 2;
+      const radius = 1.2;
+      const dot = new THREE.Mesh(
+        new THREE.SphereGeometry(0.06, 6, 6), 
+        new THREE.MeshStandardMaterial({ color: 0x44aaff, emissive: 0x004466, emissiveIntensity: 0.6 })
+      );
+      dot.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+      dot.castShadow = true;
+      solanaTokenGroup.add(dot);
     }
 
-    // Keyboard (base laptop)
-    const keyboardMat = new THREE.MeshStandardMaterial({ color: 0x1a1a2a, roughness: 0.5 });
-    const keyboard = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.02, 0.2), keyboardMat);
-    keyboard.position.set(0, 0.02, 0.12);
-    keyboard.rotation.x = 0.1;
-    keyboard.castShadow = true;
-    personTradingGroup.add(keyboard);
+    scene.add(solanaTokenGroup);
 
-    // Mouse
-    const mouseMat = new THREE.MeshStandardMaterial({ color: 0x222233, roughness: 0.3 });
-    const mouse = new THREE.Mesh(new THREE.SphereGeometry(0.04, 8, 8), mouseMat);
-    mouse.scale.set(0.8, 0.4, 1);
-    mouse.position.set(0.2, 0.02, 0.2);
-    mouse.castShadow = true;
-    personTradingGroup.add(mouse);
-
-    // Kursi (sederhana)
-    const chairMat = new THREE.MeshStandardMaterial({ color: 0x2a3a5a, roughness: 0.7 });
-    const seat = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.04, 0.3), chairMat);
-    seat.position.set(-0.3, -0.05, 0.15);
-    seat.castShadow = true;
-    personTradingGroup.add(seat);
-
-    const backrest = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.3, 0.04), chairMat);
-    backrest.position.set(-0.3, 0.12, 0.32);
-    backrest.castShadow = true;
-    personTradingGroup.add(backrest);
-
-    // Orang (tubuh)
-    const bodyMat = new THREE.MeshStandardMaterial({ color: 0x44aaff, emissive: 0x004466, emissiveIntensity: 0.1 });
-    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.14, 0.3, 8), bodyMat);
-    body.position.set(-0.3, 0.2, 0.08);
-    body.castShadow = true;
-    personTradingGroup.add(body);
-
-    // Kepala
-    const headMat = new THREE.MeshStandardMaterial({ color: 0xffcc99, emissive: 0x442211, emissiveIntensity: 0.05 });
-    const head = new THREE.Mesh(new THREE.SphereGeometry(0.09, 10, 10), headMat);
-    head.position.set(-0.3, 0.4, 0.06);
-    head.castShadow = true;
-    personTradingGroup.add(head);
-
-    // Tangan (sederhana)
-    const armMat = new THREE.MeshStandardMaterial({ color: 0x44aaff });
-    const armL = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.03, 0.15, 6), armMat);
-    armL.position.set(-0.4, 0.1, 0.08);
-    armL.rotation.z = 0.3;
-    armL.rotation.x = -0.3;
-    armL.castShadow = true;
-    personTradingGroup.add(armL);
-
-    const armR = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.03, 0.15, 6), armMat);
-    armR.position.set(-0.2, 0.1, 0.08);
-    armR.rotation.z = -0.3;
-    armR.rotation.x = -0.3;
-    armR.castShadow = true;
-    personTradingGroup.add(armR);
-
-    scene.add(personTradingGroup);
-
-    // --- TOKEN $TURSEM ---
+    // --- TOKEN $TURSEM (SISI KANAN) ---
     const tokenGroup = new THREE.Group();
     tokenGroup.position.set(2.5, 1.2, -2.0);
 
@@ -2035,28 +2018,18 @@
       const delta = clock.getDelta();
       const elapsed = performance.now() / 1000;
 
-      // Token berputar
+      // Token SOLANA berputar (sisi kiri)
+      solanaTokenGroup.rotation.y += 0.006;
+      solanaTokenGroup.rotation.x = Math.sin(elapsed * 0.08) * 0.04;
+      solanaTokenGroup.rotation.z = Math.sin(elapsed * 0.12) * 0.02;
+
+      // Token $TURSEM berputar (sisi kanan)
       tokenGroup.rotation.y += 0.008;
       tokenGroup.rotation.x = Math.sin(elapsed * 0.1) * 0.05;
       tokenGroup.rotation.z = Math.sin(elapsed * 0.15) * 0.02;
 
       // Globe berputar
       globeGroup.rotation.y += 0.004;
-
-      // Orang trading sedikit bergerak (tangan mengetik)
-      const typingSpeed = 0.5;
-      armL.rotation.x = -0.3 + Math.sin(elapsed * typingSpeed) * 0.05;
-      armR.rotation.x = -0.3 + Math.sin(elapsed * typingSpeed + 0.5) * 0.05;
-
-      // Layar laptop berkedip (grafik bergerak)
-      const bars = personTradingGroup.children.filter(c => c.geometry && c.geometry.type === 'BoxGeometry' && c.material && c.material.color && c.position.y > 0.1);
-      bars.forEach((bar, index) => {
-        if (bar.position && bar.position.y) {
-          const newHeight = 0.01 + Math.sin(elapsed * 0.5 + index * 0.7) * 0.06 + 0.06;
-          bar.scale.y = newHeight / 0.07;
-          bar.position.y = 0.1 + newHeight / 2;
-        }
-      });
 
       ripple.rotation.y += 0.0005;
       ocean.rotation.y += 0.0002;
@@ -2583,7 +2556,7 @@
       }
     });
 
-    console.log('🐂 $TURSEM · dogwifhat logo updated with correct CoinMarketCap URL!');
+    console.log('🐂 $TURSEM · Token SOLANA added to the left side with logo!');
   </script>
 </body>
 </html>
